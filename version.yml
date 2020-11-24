@@ -1,0 +1,39 @@
+---
+## Playbook to configure some stuffs
+
+- hosts: ROUTERS
+  connection: network_cli
+  gather_facts: false
+  become: true
+  #become_user: cisco
+  #become_method: enable
+
+  tasks:
+
+   - name: Configure Hostname 
+     ios_config:
+      lines:
+      - hostname Ansible
+
+   - name: configure ip helpers on multiple interfaces
+     ios_config:
+      lines:
+      - aaa new-model 
+      - aaa group server radius example
+      - server 10.10.30.20
+
+   - name: Configure Uplink
+     ios_config:
+      parents: "interface GigabitEthernet1"
+      lines:
+      - description Uplink
+      - ip address 172.16.98.128 255.255.255.0
+
+
+#This plugin is part of the ansible.netcommon collection.
+
+#To install it use: ansible-galaxy collection install ansible.netcommon.
+
+#To use it in a playbook, specify: ansible.netcommon.network_cli.
+#sudo apt install sshpass -y
+#Run the playbook ansible-playbook version.yml --ask-become-pass
