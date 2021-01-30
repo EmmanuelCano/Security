@@ -1,0 +1,2 @@
+In order to excecute all playbooks in the terminal you will need be on the path 
+(i.e desktop/security/ansible)
