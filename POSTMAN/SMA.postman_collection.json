@@ -1,0 +1,501 @@
+{
+	"info": {
+		"_postman_id": "312e8760-9d7d-443a-b515-8294ebd747ee",
+		"name": "SMA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SMA Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": \n    {\n        \"userName\":\"ZW1tYQ==\",\n        \"passphrase\":\"Q2lzY28uU01BMQ==\"\n    }\n}"
+				},
+				"url": {
+					"raw": "https://10.207.195.85:6443/sma/api/v2.0/login",
+					"protocol": "https",
+					"host": [
+						"10",
+						"207",
+						"195",
+						"85"
+					],
+					"port": "6443",
+					"path": [
+						"sma",
+						"api",
+						"v2.0",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Devices Registered",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "jwttoken",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImVtbWEiLCJpczJGYWN0b3JDaGVja1JlcXVpcmVkIjpmYWxzZSwiY29va2llIjoiVGxScmQwNUVUWGxPVkVrOUNqdFpXRUozWWtkc2FsbFlVbkJpTWpSMllXNU9kbUpuUFQwS08wMVVRWFZOYWtFelRHcEZOVTVUTkRST1xuVkc4eVRrUlJlZ283VlVjNWVtUkhNV2hpYkVveFltNVNjR0pYVlhaT2VUUjVUME0wZUFvN1ZGUkJkMDFHV1RkTlZFMTFUME0wZUV4VVxuUVRGTmFuTXdUV3BKTUZGNlVUUk9SR3hFVGpCVmVVMUVTVFZOYWtaQ1RsTXdNMUpGVWtSTlZFMDFUMVZGTUU1VlZUY0tPMXBYTVhSWlxuVVQwOUNqcz1cbiIsInVzZXIiOiJOT05FVVEiLCJleHAiOjE2MjU0MTgzNTZ9.reVwjQ9e98kxp8UNeIy8Zn-c5B0oaDw9KgrqMsiowhU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{sma2ip}}/sma/api/v2.0/config/appliances?device_type=sma",
+					"host": [
+						"{{sma2ip}}"
+					],
+					"path": [
+						"sma",
+						"api",
+						"v2.0",
+						"config",
+						"appliances"
+					],
+					"query": [
+						{
+							"key": "device_type",
+							"value": "sma"
+						}
+					]
+				},
+				"description": "https://{{sma-ip}}/sma/api/v2.0/config/appliances?device_type=sma"
+			},
+			"response": []
+		},
+		{
+			"name": "Get ESAs Serial Number",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "jwttoken",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImVtbWEiLCJpczJGYWN0b3JDaGVja1JlcXVpcmVkIjpmYWxzZSwiY29va2llIjoiVGxScmQwNUVUWGxPVkVrOUNqdFpXRUozWWtkc2FsbFlVbkJpTWpSMllXNU9kbUpuUFQwS08wMVVRWFZOYWtFelRHcEZOVTVUTkRST1xuVkc4eVRrUlJlZ283VlVjNWVtUkhNV2hpYkVveFltNVNjR0pYVlhaT2VUUjVUME0wZUFvN1ZGUkJkMDFHV1RkTlZFMTFUME0wZUV4VVxuUVRGTmFuTXdUV3BKTUZGNlVUUk9SR3hFVGpCVmVVMUVTVFZOYWtaQ1RsTXdNMUpGVWtSTlZFMDFUMVZGTUU1VlZUY0tPMXBYTVhSWlxuVVQwOUNqcz1cbiIsInVzZXIiOiJOT05FVVEiLCJleHAiOjE2MjQ2ODY4OTN9.dXJR-dJjpDt_0YNu5DqpsRlcB9zWi2BnBc24pjbtjR8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://10.207.195.85:6443/sma/api/v2.0/config/reporting_groups?device_type=sma",
+					"protocol": "https",
+					"host": [
+						"10",
+						"207",
+						"195",
+						"85"
+					],
+					"port": "6443",
+					"path": [
+						"sma",
+						"api",
+						"v2.0",
+						"config",
+						"reporting_groups"
+					],
+					"query": [
+						{
+							"key": "device_type",
+							"value": "sma"
+						}
+					]
+				},
+				"description": "https://10.207.195.85:6443/sma/api/v2.0/config/reporting_groups?device_type=sma"
+			},
+			"response": []
+		},
+		{
+			"name": "Get System Time",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "jwttoken",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImVtbWEiLCJpczJGYWN0b3JDaGVja1JlcXVpcmVkIjpmYWxzZSwiY29va2llIjoiVGxScmQwNUVUWGxPVkVrOUNqdFpXRUozWWtkc2FsbFlVbkJpTWpSMllXNU9kbUpuUFQwS08wMVVRWFZOYWtFelRHcEZOVTVUTkRST1xuVkc4eVRrUlJlZ283VlVjNWVtUkhNV2hpYkVveFltNVNjR0pYVlhaT2VUUjVUME0wZUFvN1ZGUkJkMDFHV1RkTlZFMTFUME0wZUV4VVxuUVRGTmFuTXdUV3BKTUZGNlVUUk9SR3hFVGpCVmVVMUVTVFZOYWtaQ1RsTXdNMUpGVWtSTlZFMDFUMVZGTUU1VlZUY0tPMXBYTVhSWlxuVVQwOUNqcz1cbiIsInVzZXIiOiJOT05FVVEiLCJleHAiOjE2MjQ2ODY4OTN9.dXJR-dJjpDt_0YNu5DqpsRlcB9zWi2BnBc24pjbtjR8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{sma2ip}}/sma/api/v2.0/config/system_time?device_type=sma",
+					"host": [
+						"{{sma2ip}}"
+					],
+					"path": [
+						"sma",
+						"api",
+						"v2.0",
+						"config",
+						"system_time"
+					],
+					"query": [
+						{
+							"key": "device_type",
+							"value": "sma"
+						}
+					]
+				},
+				"description": "{{sma2ip}}/sma/api/v2.0/config/system_time?device_type=sma"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Centralized Services",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "jwttoken",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImVtbWEiLCJpczJGYWN0b3JDaGVja1JlcXVpcmVkIjpmYWxzZSwiY29va2llIjoiVGxScmQwNUVUWGxPVkVrOUNqdFpXRUozWWtkc2FsbFlVbkJpTWpSMllXNU9kbUpuUFQwS08wMVVRWFZOYWtFelRHcEZOVTVUTkRST1xuVkc4eVRrUlJlZ283VlVjNWVtUkhNV2hpYkVveFltNVNjR0pYVlhaT2VUUjVUME0wZUFvN1ZGUkJkMDFHV1RkTlZFMTFUME0wZUV4VVxuUVRGTmFuTXdUV3BKTUZGNlVUUk9SR3hFVGpCVmVVMUVTVFZOYWtaQ1RsTXdNMUpGVWtSTlZFMDFUMVZGTUU1VlZUY0tPMXBYTVhSWlxuVVQwOUNqcz1cbiIsInVzZXIiOiJOT05FVVEiLCJleHAiOjE2MjQ2ODY4OTN9.dXJR-dJjpDt_0YNu5DqpsRlcB9zWi2BnBc24pjbtjR8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{sma2ip}}/sma/api/v2.0/config/centralized_services?device_type=sma",
+					"host": [
+						"{{sma2ip}}"
+					],
+					"path": [
+						"sma",
+						"api",
+						"v2.0",
+						"config",
+						"centralized_services"
+					],
+					"query": [
+						{
+							"key": "device_type",
+							"value": "sma"
+						}
+					]
+				},
+				"description": "{{sma2ip}}/sma/api/v2.0/config/centralized_services?device_type=sma"
+			},
+			"response": []
+		},
+		{
+			"name": "Get APIs Accessible to a User Role logged",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "jwttoken",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImVtbWEiLCJpczJGYWN0b3JDaGVja1JlcXVpcmVkIjpmYWxzZSwiY29va2llIjoiVGxScmQwNUVUWGxPVkVrOUNqdFpXRUozWWtkc2FsbFlVbkJpTWpSMllXNU9kbUpuUFQwS08wMVVRWFZOYWtFelRHcEZOVTVUTkRST1xuVkc4eVRrUlJlZ283VlVjNWVtUkhNV2hpYkVveFltNVNjR0pYVlhaT2VUUjVUME0wZUFvN1ZGUkJkMDFHV1RkTlZFMTFUME0wZUV4VVxuUVRGTmFuTXdUV3BKTUZGNlVUUk9SR3hFVGpCVmVVMUVTVFZOYWtaQ1RsTXdNMUpGVWtSTlZFMDFUMVZGTUU1VlZUY0tPMXBYTVhSWlxuVVQwOUNqcz1cbiIsInVzZXIiOiJOT05FVVEiLCJleHAiOjE2MjQ2ODY4OTN9.dXJR-dJjpDt_0YNu5DqpsRlcB9zWi2BnBc24pjbtjR8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{sma2ip}}/sma/api/v2.0/login/privileges",
+					"host": [
+						"{{sma2ip}}"
+					],
+					"path": [
+						"sma",
+						"api",
+						"v2.0",
+						"login",
+						"privileges"
+					]
+				},
+				"description": "{{sma2ip}}/sma/api/v2.0/login/privileges"
+			},
+			"response": []
+		},
+		{
+			"name": "Get  system status of the feature",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "jwttoken",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6ImVtbWEiLCJpczJGYWN0b3JDaGVja1JlcXVpcmVkIjpmYWxzZSwiY29va2llIjoiVGxScmQwNUVUWGxPVkVrOUNqdFpXRUozWWtkc2FsbFlVbkJpTWpSMllXNU9kbUpuUFQwS08wMVVRWFZOYWtFelRHcEZOVTVUTkRST1xuVkc4eVRrUlJlZ283VlVjNWVtUkhNV2hpYkVveFltNVNjR0pYVlhaT2VUUjVUME0wZUFvN1ZGUkJkMDFHV1RkTlZFMTFUME0wZUV4VVxuUVRGTmFuTXdUV3BKTUZGNlVUUk9SR3hFVGpCVmVVMUVTVFZOYWtaQ1RsTXdNMUpGVWtSTlZFMDFUMVZGTUU1VlZUY0tPMXBYTVhSWlxuVVQwOUNqcz1cbiIsInVzZXIiOiJOT05FVVEiLCJleHAiOjE2MjQ2ODY4OTN9.dXJR-dJjpDt_0YNu5DqpsRlcB9zWi2BnBc24pjbtjR8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{sma2ip}}/sma/api/v2.0/config/centralizedServices/systemStatus?device_type=sma",
+					"host": [
+						"{{sma2ip}}"
+					],
+					"path": [
+						"sma",
+						"api",
+						"v2.0",
+						"config",
+						"centralizedServices",
+						"systemStatus"
+					],
+					"query": [
+						{
+							"key": "device_type",
+							"value": "sma"
+						}
+					]
+				},
+				"description": "{{sma2ip}}/sma/api/v2.0/config/centralizedServices/systemStatus?device_type=sma"
+			},
+			"response": []
+		},
+		{
+			"name": "SMA WSA Login Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": \n    {\n        \"userName\":\"ZGV2bmV0\",\n        \"passphrase\":\"RGV2bmV0MjAyMQ==\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://10.207.195.92:6443/sma/api/v2.0/login",
+					"protocol": "https",
+					"host": [
+						"10",
+						"207",
+						"195",
+						"92"
+					],
+					"port": "6443",
+					"path": [
+						"sma",
+						"api",
+						"v2.0",
+						"login"
+					]
+				},
+				"description": "https://10.207.195.92:6443/sma/api/v2.0/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Get WSA information SMA",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Devnet2021",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "devnet",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://10.207.195.92:6443/sma/api/v2.0/config/appliances?device_type=sma",
+					"protocol": "https",
+					"host": [
+						"10",
+						"207",
+						"195",
+						"92"
+					],
+					"port": "6443",
+					"path": [
+						"sma",
+						"api",
+						"v2.0",
+						"config",
+						"appliances"
+					],
+					"query": [
+						{
+							"key": "device_type",
+							"value": "sma"
+						}
+					]
+				},
+				"description": "https://10.207.195.92:6443/sma/api/v2.0/config/appliances?device_type=sma"
+			},
+			"response": []
+		},
+		{
+			"name": "Get FDM Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Cisco1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://10.10.20.65:443/api/fdm/latest/fdm/token",
+					"protocol": "https",
+					"host": [
+						"10",
+						"10",
+						"20",
+						"65"
+					],
+					"port": "443",
+					"path": [
+						"api",
+						"fdm",
+						"latest",
+						"fdm",
+						"token"
+					]
+				},
+				"description": "https://10.10.20.65:443/api/fdm/latest/fdm/token"
+			},
+			"response": []
+		},
+		{
+			"name": "SMA2 Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": \n    {\n        \"userName\":\"ZW1tYQ==\",\n        \"passphrase\":\"Q2lzY28uU01BMQ==\"\n    }\n}"
+				},
+				"url": {
+					"raw": "{{sma2ip}}/sma/api/v2.0/login",
+					"host": [
+						"{{sma2ip}}"
+					],
+					"path": [
+						"sma",
+						"api",
+						"v2.0",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
