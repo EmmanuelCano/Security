@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "59f74046-d81f-4b1a-a36c-5e7c6e8e45e2",
+		"name": "OpenVuln",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "OpenVuln API Get Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "{{grant_type}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://cloudsso.cisco.com/as/token.oauth2?",
+					"protocol": "https",
+					"host": [
+						"cloudsso",
+						"cisco",
+						"com"
+					],
+					"path": [
+						"as",
+						"token.oauth2"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				},
+				"description": "https://cloudsso.cisco.com/as/token.oauth2?="
+			},
+			"response": []
+		},
+		{
+			"name": "Get Latest 10 advisories",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "yclPmJA27QUWfbOxsBvt5VaUwzGh",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{basicurl}}latest/10",
+					"host": [
+						"{{basicurl}}latest"
+					],
+					"path": [
+						"10"
+					]
+				},
+				"description": "https://api.cisco.com/security/advisories/latest/10"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Advisory by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9llhvv9uWzzcthx8meiNpFa31Zuq",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.cisco.com/security/advisories/advisory/cisco-sa-ise-info-exp-8RsuEu8S",
+					"protocol": "https",
+					"host": [
+						"api",
+						"cisco",
+						"com"
+					],
+					"path": [
+						"security",
+						"advisories",
+						"advisory",
+						"cisco-sa-ise-info-exp-8RsuEu8S"
+					]
+				},
+				"description": "https://api.cisco.com/security/advisories/advisory/cisco-sa-ise-priv-esc-fNZX8hHj"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Advisroy info by CVE ID ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "mmWUU5t7Jakx02lDytrsvpiodgse",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.cisco.com/security/advisories/cve/CVE-2020-3580",
+					"protocol": "https",
+					"host": [
+						"api",
+						"cisco",
+						"com"
+					],
+					"path": [
+						"security",
+						"advisories",
+						"cve",
+						"CVE-2020-3580"
+					]
+				},
+				"description": "https://api.cisco.com/security/advisories/cve/CVE-2020-3580"
+			},
+			"response": []
+		},
+		{
+			"name": "GetAdvisoriesbyProduct",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "mmWUU5t7Jakx02lDytrsvpiodgse",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.cisco.com/security/advisories/product?product=ASA",
+					"protocol": "https",
+					"host": [
+						"api",
+						"cisco",
+						"com"
+					],
+					"path": [
+						"security",
+						"advisories",
+						"product"
+					],
+					"query": [
+						{
+							"key": "product",
+							"value": "ASA"
+						}
+					]
+				},
+				"description": "https://api.cisco.com/security/advisories/product?product=ASA"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Advisories by SIR",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "9llhvv9uWzzcthx8meiNpFa31Zuq",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.cisco.com/security/advisories/severity/high/firstpublished?startDate=2021-03-18&endDate=2021-06-23",
+					"protocol": "https",
+					"host": [
+						"api",
+						"cisco",
+						"com"
+					],
+					"path": [
+						"security",
+						"advisories",
+						"severity",
+						"high",
+						"firstpublished"
+					],
+					"query": [
+						{
+							"key": "product",
+							"value": "ASA",
+							"disabled": true
+						},
+						{
+							"key": "startDate",
+							"value": "2021-03-18"
+						},
+						{
+							"key": "endDate",
+							"value": "2021-06-23"
+						}
+					]
+				},
+				"description": "https://api.cisco.com/security/advisories/severity/high/firstpublished?startDate=2021-03-18&endDate=2021-06-23"
+			},
+			"response": []
+		}
+	]
+}
